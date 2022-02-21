@@ -1,4 +1,4 @@
 lab1:
-	+$(MAKE) -C data_lab1
+	+$(MAKE) -C lab_1
 
 
