@@ -1,1 +1,16 @@
 # HaseebKhan3140Lab
+
+## Lab 1
+
+Run the command below to for lab1
+```bash
+make lab1
+```
+### Report
+In this lab I reported out the ranking of each car given to us through a csv file, after that I created a text file which sorts the cars in reverse order by ranking. I then found the top three of the highest ranked cars and wrote them into a file. The raw data contained a numerical value for each part that may be important in a car and then by adding them up we get the ranking.
+
+
+### Output
+
+The first part of lab 1 is the file sorted.out in the folder lab_1
+The second part of lab 1 is the file topThreeSorted.out if you want to see it sorted by car name and topThree.out if sorted by ranking
