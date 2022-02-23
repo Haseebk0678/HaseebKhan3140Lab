@@ -2,7 +2,7 @@
 
 ## Lab 1
 
-Run the command below to for lab1
+While in the folder HaseebKhan3140Lab (the main folder) run the command below to for lab1
 ```bash
 make lab1
 ```
