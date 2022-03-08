@@ -32,19 +32,18 @@ CREATE TABLE Car_Ranking(
    Car_Year int,
    Car_Make text,
    Car_Model text,
-   Car_Total int,
-   Car_Rank int);
+   Car_Total int);
 
-INSERT INTO Car_Ranking(Car_ID,Car_Year,Car_Make, Car_Model,Car_Total) SELECT Car_ID,Car_Year,Car_Make,Car_Model,Car_Total FROM Car_Total ORDER BY Car_Total DESC;
+INSERT INTO Car_Ranking SELECT * FROM Car_Total ORDER BY Car_Total DESC;
 
 CREATE TABLE Rank(
-   Car_Rank int,
+   Ranking int,
    Car_ID int,
    Car_Year int,
    Car_Make text,
    Car_Model text);
 
-INSERT INTO Rank(Car_Rank, Car_ID, Car_Year,Car_Make,Car_Model) SELECT rowid, Car_ID,Car_Year,Car_Make,Car_Model FROM Car_Ranking;
+INSERT INTO Rank (Ranking, Car_ID, Car_Year,Car_Make,Car_Model) SELECT rowid, Car_ID,Car_Year,Car_Make,Car_Model FROM Car_Ranking;
 
 
 .mode csv
@@ -52,13 +51,14 @@ INSERT INTO Rank(Car_Rank, Car_ID, Car_Year,Car_Make,Car_Model) SELECT rowid, Ca
 SELECT * FROM Rank;
 
 -- Figuring out this rn
-SELECT * FROM Rank GROUP BY Car_Make LIMIT 10;
+-- SELECT * FROM Rank GROUP BY Car_Make LIMIT 10;
 
 
 
--- FOUND ON STACK OVER FLOW OMFG I WAS ABOUT TO DO WHERE = 'CAR_MAKE' FOR EACH CAR
+-- Found on Stack Over
 .mode csv
 .output extract2.csv
+
 SELECT *
     FROM (
         SELECT *, Rank() 
@@ -66,3 +66,7 @@ SELECT *
                 ORDER BY Car_Rank DESC ) AS Rank
         FROM Rank
         ) rs WHERE Rank <= 3;
+
+
+
+select Judge_ID, count(*) as c FROM Judges GROUP BY Judge_ID
