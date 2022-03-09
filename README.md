@@ -25,5 +25,8 @@ To start lab 2 run
 ```bash
 make lab2
 ```
+### Dependencies
+
+MUST BE ON VERSION SQLite version 3.32.3 
 
 The rest of the documentation can be found in the folder lab_2

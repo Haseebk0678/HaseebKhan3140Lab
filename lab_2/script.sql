@@ -1,3 +1,4 @@
+sqlite3 Lab2DB
 .headers on
 .mode columns
 
@@ -27,7 +28,7 @@ CREATE TABLE Car_Score(
    Car_Score int);
 
 .mode csv
-.import \Car_Score.csv Car
+.import \Car_Score.csv Car_Score
 
 CREATE TABLE Cars(
    Car_ID int primary key,
@@ -73,14 +74,9 @@ INSERT INTO Rank (Ranking, Car_ID, Car_Year,Car_Make,Car_Model) SELECT rowid, Ca
 .output extract1.csv
 SELECT * FROM Rank;
 
--- Figuring out this rn
--- SELECT * FROM Rank GROUP BY Car_Make LIMIT 10;
-
-
-
--- Found on Stack Overflow
 .mode csv
 .output extract2.csv
+
 
 SELECT *
     FROM (
@@ -104,5 +100,11 @@ CREATE TABLE Judges_New(
 
 INSERT INTO Judges_New SELECT Judge_ID, count(*), min(Judge_Time), max(Judge_Time), max(Judge_Time_Min) - min(Judge_Time_Min), (max(Judge_Time_Min) - min(Judge_Time_Min))/count(*) FROM Judges GROUP BY Judge_ID;
 
+.mode csv
+.output extract3.csv
+
+select * from Judges_New;
+
 
 Drop table Judges;
+
