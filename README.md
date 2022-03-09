@@ -29,4 +29,4 @@ make lab2
 
 MUST BE ON VERSION SQLite version 3.32.3 
 
-The rest of the documentation can be found in the folder lab_2
+The rest of the documentation can be found in the folder lab_2 including a readme
