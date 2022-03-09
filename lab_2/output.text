@@ -1,0 +1,159 @@
+Script started on Tue Mar  8 22:10:00 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ make lab2
+/Library/Developer/CommandLineTools/usr/bin/make -C lab_2
+awk -f script.awk data/data.csv 
+awk
+data/data.csv
+bash-3.2$ make lab2sqlite3 Lab2DB [C[C[C[C[C[C[C[C[C[C[6Pmake lab2[Kcd lab_2/
+bash-3.2$ sqlite3 ScriptOutputDB
+SQLite version 3.32.3 2020-06-18 14:16:19
+Enter ".help" for usage hints.
+sqlite> .headers on
+sqlite> .mode columns
+sqlite> 
+sqlite> CREATE TABLE Judges(
+   ...>     Judge_Time text,
+   ...>     Judge_ID text,
+   ...>     Judge_Name text,
+   ...>     Judge_Time_Min int
+   ...>     );
+.mode csv
+.import \Judges_Table.csv Judges
+
+CREATE TABLE Car_sqlite> .mode csv
+sqlite> .import \Judges_Table.csv Judges
+
+CREATE TABLE Car_Score(
+   Car_ID int primary key,
+   Car_Score intsqlite> 
+sqlite> CREATE TABLE Car_Score(
+   ...>    Car_ID int primary key,
+   ...>    Car_Score int);
+.mode csv
+.import \Car_Score.csv Car
+
+CREATE TABLE Cars(
+   Car_ID int primary key,
+   Car_Year isqlite> .mode csv
+sqlite> .import \Car_Score.csv Car
+
+CREATE TABLE Cars(
+   Car_ID int primary key,
+   Car_Year int,
+   Car_Make text,
+   Car_Model text,
+   Owner_Name text,
+   Owner_Email text);
+.mode csv
+.importsqlite> 
+sqlite> CREATE TABLE Cars(
+   ...>    Car_ID int primary key,
+   ...>    Car_Year int,
+   ...>    Car_Make text,
+   ...>    Car_Model text,
+   ...>    Owner_Name text,
+   ...>    Owner_Email text);
+.mode csv
+.import \Cars_Table.csv Cars
+
+CREATE TABLE Car_Total(
+   Car_ID int,
+   Car_Year int,
+   Car_Make text,
+   Car_Model text,
+   Car_Total int);
+
+CREATE TABLE Csqlite> .mode csv
+sqlite> .import \Cars_Table.csv Cars
+
+CREATE TABLE Car_Total(
+   Car_ID int,
+   Car_Year int,
+   Car_Make text,
+   Car_Model text,
+   Car_Total int);
+
+CREATE TABLE Car_Ranking(
+   Car_ID int,
+   Car_Year int,
+   Car_Make text,
+   Car_Model text,
+   Car_Total int);
+sqlite> 
+sqlite> CREATE TABLE Car_Total(
+   ...>    Car_ID int,
+   ...>    Car_Year int,
+   ...>    Car_Make text,
+   ...>    Car_Model text,
+   ...>    Car_Total int);
+sqlite> 
+sqlite> CREATE TABLE Car_Ranking(
+   ...>    Car_ID int,
+   ...>    Car_Year int,
+   ...>    Car_Make text,
+   ...>    Car_Model text,
+   ...>    Car_Total int);
+
+INSERT INTO Car_Ranking SELECT * FROM Car_Total ORDER BY Car_Total DESC;
+
+CREATE TABLE Rank(
+   Ranking int,
+   Car_ID int,
+   Car_Year int,
+   Car_Msqlite> 
+sqlite> INSERT INTO Car_Ranking SELECT * FROM Car_Total ORDER BY Car_Total DESC;
+sqlite> 
+sqlite> CREATE TABLE Rank(
+   ...>    Ranking int,
+   ...>    Car_ID int,
+   ...>    Car_Year int,
+   ...>    Car_Make text,
+   ...>    Car_Model text);
+sqlite> 
+sqlite> INSERT INTO Rank (Ranking, Car_ID, Car_Year,Car_Make,Car_Model) SELECINSERT INTO Rank (Ranking, Car_ID, Car_Year,Car_Make,Car_Model) SELECT rowid, Car_ID,Car_Year,Car_Make,Car_Model FROM Car_Rankin g;
+sqlite> 
+sqlite> 
+sqlite> .mode csv
+sqlite> .output extract1.csv
+sqlite> SELECT * FROM Rank;
+sqlite> 
+sqlite> -- Figuring out this rn
+sqlite> -- SELECT * FROM Rank GROUP BY Car_Make LIMIT 10;
+sqlite> 
+sqlite> 
+sqlite> 
+sqlite> -- Found on Stack Overflow
+sqlite> .mode csv
+sqlite> .output extract2.csv
+sqlite> 
+sqlite> SELECT *
+   ...>     FROM (
+   ...>         SELECT *, Rank() 
+   ...>           over (Partition BY Car_Make
+   ...>                 ORDER BY Ranking DESC ) AS Rank
+   ...>         FROM Rank
+   ...>         ) rs WHERE Rank <= 3;
+sqlite> 
+sqlite> 
+sqlite> CREATE TABLE Judges_New(
+   ...>     Judge_ID text,
+   ...>     Amount_Of_Times_Judges_Judged Int,
+   ...>     min_Judge_Time time,
+   ...>     max_Judge_Time time,
+   ...>     Judge_Length_In_Minutes int,
+   ...>     Average_Amount_Of_Minutes_Per_Case int
+   ...> );
+sqlite> 
+sqlite> 
+sqlite> 
+sqlite> INSERT INTO Judges_New SELECT Judge_ID, count(*), min(Judge_Time), max(Judge_Time), max(Judge_Time_Min) - min(Judge_Time_Min), ( max(Judge_Time_Min) - min(Judge_Time_Min))/count(*) FROM Judges GROUP BY Judge_ID;
+sqlite> 
+sqlite> Drop table Judges;
+sqlite> ^D
+bash-3.2$ exit
+
+Script done on Tue Mar  8 22:10:56 2022

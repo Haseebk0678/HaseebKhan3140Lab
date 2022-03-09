@@ -1,14 +1,20 @@
+.headers on
+.mode columns
+
 CREATE TABLE Judges(
+    Judge_Time text,
     Judge_ID text,
-    Judge_Name text);
-    .mode csv
-    .import \Judges_Table.csv judges;
+    Judge_Name text,
+    Judge_Time_Min int
+    );
+.mode csv
+.import \Judges_Table.csv Judges
 
 CREATE TABLE Car_Score(
    Car_ID int primary key,
    Car_Score int);
-   .mode csv
-   .import \Car_Score.csv Car;
+.mode csv
+.import \Car_Score.csv Car
 
 CREATE TABLE Cars(
    Car_ID int primary key,
@@ -17,8 +23,8 @@ CREATE TABLE Cars(
    Car_Model text,
    Owner_Name text,
    Owner_Email text);
-   .mode csv
-   .import \Cars_Table.csv Cars
+.mode csv
+.import \Cars_Table.csv Cars
 
 CREATE TABLE Car_Total(
    Car_ID int,
@@ -55,7 +61,7 @@ SELECT * FROM Rank;
 
 
 
--- Found on Stack Over
+-- Found on Stack Overflow
 .mode csv
 .output extract2.csv
 
@@ -63,10 +69,22 @@ SELECT *
     FROM (
         SELECT *, Rank() 
           over (Partition BY Car_Make
-                ORDER BY Car_Rank DESC ) AS Rank
+                ORDER BY Ranking DESC ) AS Rank
         FROM Rank
         ) rs WHERE Rank <= 3;
 
 
+CREATE TABLE Judges_New(
+    Judge_ID text,
+    Amount_Of_Times_Judges_Judged Int,
+    min_Judge_Time time,
+    max_Judge_Time time,
+    Judge_Length_In_Minutes int,
+    Average_Amount_Of_Minutes_Per_Case int
+);
 
-select Judge_ID, count(*) as c FROM Judges GROUP BY Judge_ID
+
+
+INSERT INTO Judges_New SELECT Judge_ID, count(*), min(Judge_Time), max(Judge_Time), max(Judge_Time_Min) - min(Judge_Time_Min), (max(Judge_Time_Min) - min(Judge_Time_Min))/count(*) FROM Judges GROUP BY Judge_ID;
+
+Drop table Judges;

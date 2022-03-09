@@ -17,3 +17,11 @@ In this lab I reported out the ranking of each car given to us through a csv fil
 The first part of lab 1 is the file sorted.out in the folder lab_1
 
 The second part of lab 1 is the file topThreeSorted.out if you want to see it sorted by car name and topThree.out if sorted by ranking
+
+
+## Lab 2
+
+To start lab 2 run
+```bash
+make lab2
+```

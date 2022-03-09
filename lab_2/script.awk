@@ -2,6 +2,11 @@ BEGIN {
     FPAT = "([^,]+)|(\"[^\"]+\")"
     FS = ","
     OFS = ","
+
+   for ( i = 0; i < ARGC; i++ )
+   {
+       print ARGV[i]
+   }
 }
 {
     if(NR>1){
@@ -11,7 +16,7 @@ BEGIN {
     }
 
     print $7, total  > "Car_Score.csv"
-    print  $8, $9  > "Judges_Table.csv"
+    print  $1 = substr($1, 10, 14), $8, $9, substr($1, 1, 2) * 60 + substr($1, 4) > "Judges_Table.csv"
     print $7, $4, $5, $6, $3, $2  > "Cars_Table.csv"
     }
 }
