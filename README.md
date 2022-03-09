@@ -25,3 +25,5 @@ To start lab 2 run
 ```bash
 make lab2
 ```
+
+The rest of the documentation can be found in the folder lab_2
