@@ -7,12 +7,14 @@ CREATE TABLE Judges(
     Judge_Name text,
     Judge_Time_Min int
     );
+
 .mode csv
 .import \Judges_Table.csv Judges
 
 CREATE TABLE Car_Score(
    Car_ID int primary key,
    Car_Score int);
+
 .mode csv
 .import \Car_Score.csv Car
 
@@ -23,6 +25,7 @@ CREATE TABLE Cars(
    Car_Model text,
    Owner_Name text,
    Owner_Email text);
+   
 .mode csv
 .import \Cars_Table.csv Cars
 
