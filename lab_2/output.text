@@ -8,7 +8,8 @@ For more details, please visit https://support.apple.com/kb/HT208050.
 awk -f script.awk data/data.csv 
 awk
 data/data.csv
-bash-3.2$ make lab2sqlite3 Lab2DB [C[C[C[C[C[C[C[C[C[C[6Pmake lab2[Kcd lab_2/
+bash-3.2$ make lab2sqlite3 Lab2DB 
+[C[C[C[C[C[C[C[C[C[C[6Pmake lab2[Kcd lab_2/
 bash-3.2$ sqlite3 ScriptOutputDB
 SQLite version 3.32.3 2020-06-18 14:16:19
 Enter ".help" for usage hints.
@@ -34,12 +35,12 @@ sqlite> CREATE TABLE Car_Score(
    ...>    Car_ID int primary key,
    ...>    Car_Score int);
 .mode csv
-.import \Car_Score.csv Car
+.import \Car_Score.csv Cars_Score
 
 CREATE TABLE Cars(
    Car_ID int primary key,
    Car_Year isqlite> .mode csv
-sqlite> .import \Car_Score.csv Car
+sqlite> .import \Car_Score.csv Cars
 
 CREATE TABLE Cars(
    Car_ID int primary key,
