@@ -38,6 +38,7 @@ o Try to complete this in a single query if you can.
 
 
 ## Raw data
+Given a data set named [data.csv](https://github.com/Haseebk0678/HaseebKhan3140Lab/blob/main/lab_2/data/data.csv)
 
 
 
