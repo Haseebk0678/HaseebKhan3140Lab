@@ -29,4 +29,4 @@ make lab2
 
 MUST BE ON VERSION SQLite version 3.32.3 
 
-The rest of the documentation can be found in the [](Readme_2.md) folder lab_2 including a readme
+The rest of the documentation can be found in the [https://github.com/Haseebk0678/HaseebKhan3140Lab/tree/main/lab_2](Readme_2.md) folder lab_2 including a readme
