@@ -38,12 +38,15 @@ o Try to complete this in a single query if you can.
 
 
 ## Raw data
-We were given a data set named [data.csv](https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e/5e68894febe276fd763dcc8e28fa6ad2657f7d7f) with a list of different variable names that can be seen in the link above. Using awk I created three more csv named [Car_Score]
+We were given a data set named [data.csv](https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e/5e68894febe276fd763dcc8e28fa6ad2657f7d7f) with a list of different variable names that can be seen in the link above. Using awk I created three more csv named [Car_Score](https://github.com/Haseebk0678/HaseebKhan3140Lab/blob/main/lab_2/Car_Score.csv), []
 
-From there I created two
 
 
 
 ## Dependencies
 
-For some reason if I copy and paste everything that I have in my 
+Ran on Mac
+
+## Other notes
+
+For some reason if I copy and paste everything that I have in my sql file onto sqlite3, some of the output, the extracts, are missed, but doing the extract by itself makes everything work, so if the extract files are empty recopy only the extract parts and it should work
