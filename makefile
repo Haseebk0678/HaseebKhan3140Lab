@@ -4,3 +4,6 @@ lab1:
 
 lab2:
 	+$(MAKE) -C lab_2
+
+lab3:
+	+$(MAKE) -C lab_3
