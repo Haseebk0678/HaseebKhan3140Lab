@@ -39,5 +39,5 @@ To start lab 4 run
 ``` bash
 make lab 4
 ```
-The rest of the documentation can be found in the [ReadMe4](https://github.com/Haseebk0678/HaseebKhan3140Lab/tree/main/lab_2) folder lab_2 including a readme
+The rest of the documentation can be found in the [ReadMe4](https://github.com/Haseebk0678/HaseebKhan3140Lab/tree/main/lab_4) folder lab_4 including a readme
 
