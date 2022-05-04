@@ -52,3 +52,12 @@ You may reuse your SQLite database/scripts from Lab 2, however be aware that you
     3. Updating data records
         1. Support query, parameter, and JSON body methods for updating 1 record at a time and across multiple records
 
+## Description
+
+The following is a description of how my program runs
+Using the command make I run the awk and sql script.
+I first use an awk script to get the data from the submodule and then use that to remove the first line and also where Car_ID = "ShowCar"
+
+From there I run sqlite3 scripts from my make file and put them into my Lab4DB.db. The sql scripts can be found Sqlscript.sql
+
+Then I ran the command npm run start, which runs the command start in package.json. The javascript file then connects that database and sets up an API endpoint. 
