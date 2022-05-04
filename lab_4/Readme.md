@@ -60,4 +60,4 @@ I first use an awk script to get the data from the submodule and then use that t
 
 From there I run sqlite3 scripts from my make file and put them into my Lab4DB.db. The sql scripts can be found Sqlscript.sql
 
-Then I ran the command npm run start, which runs the command start in package.json. The javascript file then connects that database and sets up an API endpoint. 
+Then I ran the command npm run start, which runs the command start in package.json.

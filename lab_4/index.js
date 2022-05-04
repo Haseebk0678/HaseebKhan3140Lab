@@ -271,10 +271,3 @@ app.delete("/api/cars/:carid", (req, res, next) => {
             res.json({"message":"deleted", changes: this.changes})
     });
 })
-
-
-
-// Default response for any other request
-app.use(function(req, res){
-    res.status(404);
-});
