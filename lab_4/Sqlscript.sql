@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS Car_info; 
-DROP TABLE IF EXISTS Car;
+DROP TABLE IF EXISTS Cars;
 DROP TABLE IF EXISTS Owners;
 DROP TABLE IF EXISTS Judges;
 
@@ -59,13 +59,13 @@ CREATE TABLE Car_info (
 -- GO
 
  -- create a table that only have car information 
-CREATE TABLE Car(
+CREATE TABLE Cars(
     Car_ID INT PRIMARY KEY,
     Year INT,
     Make TEXT,
     Model TEXT
 );
-INSERT INTO Car (Car_ID, Year, Make, Model) select Car_ID, Year, Make, Model from Car_info;
+INSERT INTO Cars (Car_ID, Year, Make, Model) select Car_ID, Year, Make, Model from Car_info;
 
 
 -- create a table that have owners information 
