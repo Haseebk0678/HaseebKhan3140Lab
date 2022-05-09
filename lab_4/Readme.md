@@ -17,18 +17,11 @@ After cloning the repo
 git submodule init
 git submodule updatemake
 ```
-if make was not run before in the main directory
+if make was not run before in the main directory To run the program run
 
 ``` bash
 make
 ```
-
-To run the program run
-
-``` bash
-npm run start
-```
-
 
 ## Objective
 
