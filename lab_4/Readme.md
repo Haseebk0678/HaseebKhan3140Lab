@@ -15,7 +15,7 @@ Creating a backend API endpoint
 After cloning the repo 
 ``` bash
 git submodule init
-git submodule updatemake
+git submodule update
 ```
 if make was not run before in the main directory To run the program run
 
