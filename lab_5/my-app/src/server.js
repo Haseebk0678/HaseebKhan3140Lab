@@ -5,11 +5,9 @@ var app = express()
 var db = require("./database.js")
 
 // Server
-var HTTP_PORT = 8000
+var HTTP_PORT = 3000
 
 // hashing for password later
-var md5 = require("md5")
-
 
 // Formatting
 var bodyParser = require("body-parser");
@@ -26,6 +24,8 @@ app.listen(HTTP_PORT, () => {
 app.get("/", (req, res, next) => {
     res.json({"message": "Success"})
 });
+
+
 
 // Credit to website below most infomormation from this lab was gotten here
 // https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/
