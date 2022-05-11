@@ -227,8 +227,8 @@ app.patch("/api/owners/:carid", (req, res, next) => {
     db.run(
         `UPDATE Owners set 
            Name = COALESCE(?,Name), 
-           Email = COALESCE(?,Email) 
-           WHERE Car_ID = ?`,
+           Email = COALESCE(?,Email)
+        WHERE Car_ID = ?`,
         [data.name, data.email, data.carid],
         function (err, result) {
             if (err){

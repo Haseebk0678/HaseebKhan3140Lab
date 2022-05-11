@@ -9,3 +9,6 @@
 [submodule "lab_4/data"]
 	path = lab_4/data
 	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git
+[submodule "lab_5/my-app/src/data"]
+	path = lab_5/my-app/src/data
+	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git
