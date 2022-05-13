@@ -5,7 +5,7 @@ var app = express()
 var db = require("./database.js")
 
 // Server
-var HTTP_PORT = 3000
+var HTTP_PORT = 8000
 
 // hashing for password later
 
